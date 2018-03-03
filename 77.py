@@ -10,10 +10,14 @@ class Solution:
             self.result.append(comb)
             return
 
-        for i in range(comb[-1] + 1 if len(comb) > 0 else 1, self.n + 1):
+        start = comb[-1] + 1 if len(comb) > 0 else 1
+        if self.n + 1 - start < left:
+            return
+
+        for i in range(start, self.n + 1):
             self.f(left - 1, (*comb, i))
 
 
 if __name__ == '__main__':
     solution = Solution()
-    print(solution.combine(4, 2))
+    print(solution.combine(5, 2))

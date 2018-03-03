@@ -14,7 +14,7 @@ class ListNode:
     __repr__ = __str__
 
     @classmethod
-    def build(cls, l: list):
+    def list2ListNode(cls, l: list):
         if not l:
             return None
         p = head = cls(l[0])

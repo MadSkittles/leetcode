@@ -21,4 +21,4 @@ class Solution:
 
 if __name__ == '__main__':
     solution = Solution()
-    print(solution.removeNthFromEnd(ListNode.build([1]), 1))
+    print(solution.removeNthFromEnd(ListNode.list2ListNode([1]), 1))

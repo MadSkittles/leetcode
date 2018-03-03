@@ -25,4 +25,4 @@ class Solution:
 
 if __name__ == '__main__':
     solution = Solution()
-    print(solution.rotateRight(ListNode.build([1, 2, 3, 4, 5]), 1))
+    print(solution.rotateRight(ListNode.list2ListNode([1, 2, 3, 4, 5]), 1))

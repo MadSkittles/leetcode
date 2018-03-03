@@ -25,4 +25,4 @@ class Solution:
 
 if __name__ == '__main__':
     solution = Solution()
-    print(solution.swapPairs(ListNode.build([])))
+    print(solution.swapPairs(ListNode.list2ListNode([])))
