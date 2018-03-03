@@ -2,7 +2,7 @@ from common import ListNode
 
 
 class Solution:
-    def deleteDuplicates(self, head: ListNode):
+    def deleteDuplicates(self, head):
         pre_p = p = head
         while p:
             cur_val, cur_p = p.val, p
