@@ -43,7 +43,7 @@ class TreeNode:
     def list2Tree(cls, l: list):
         nodes = []
         for i in l:
-            nodes.append(TreeNode(i) if i else None)
+            nodes.append(cls(i) if i else None)
 
         if not nodes:
             return nodes
@@ -68,3 +68,16 @@ class TreeNode:
                 q.put(node)
 
         return nodes[0] if len(nodes) else None
+
+
+class TreeLinkNode(TreeNode):
+    def __init__(self, x):
+        super(TreeLinkNode, self).__init__(x)
+        self.next = None
+
+    def __str__(self):
+        return '({left} <- {val}, {next} -> {right})'.format(left=self.left, val=self.val,
+                                                             next=self.next.val if self.next else None,
+                                                             right=self.right)
+
+    __repr__ = __str__
