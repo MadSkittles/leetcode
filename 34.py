@@ -59,12 +59,3 @@ class Solution:
 
 if __name__ == '__main__':
     solution = Solution()
-    print(solution.searchRange([], 2))
-    print(solution.searchRange([1, 2], 2))
-    print(solution.searchRange([2, 2], 2))
-    print(solution.searchRange([1, 2, 2], 2))
-    print(solution.searchRange([2, 2, 3], 2))
-    print(solution.searchRange([1, 2, 2, 3], 2))
-    print(solution.searchRange([2, 3, 4], 2))
-    print(solution.searchRange([2, 3, 4], 4))
-    print(solution.searchRange([2, 3, 4], 5))

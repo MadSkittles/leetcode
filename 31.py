@@ -12,8 +12,8 @@ class Solution:
                 self.insert(nums, i, point - 1)
                 return
 
-    def reverse(self, nums):
-        start, end = 0, len(nums) - 1
+    def reverse(self, nums, start=None, end=None):
+        start, end = start or 0, end or len(nums) - 1
         while start < end:
             nums[start], nums[end] = nums[end], nums[start]
             start += 1
@@ -21,13 +21,15 @@ class Solution:
 
     def insert(self, nums, pos, insert_pos):
         nums[pos], nums[insert_pos] = nums[insert_pos], nums[pos]
-        nums[insert_pos + 1:] = sorted(nums[insert_pos + 1:])
+        self.reverse(nums, insert_pos + 1)
 
 
 if __name__ == '__main__':
     from itertools import permutations
 
     solution = Solution()
-    a = [2,2,0,4,3,1]
-    solution.nextPermutation(a)
-    print(a)
+    p = list(permutations([1, 2, 3, 4, 5]))
+    for i in range(len(p)):
+        d = list(p[i]).copy()
+        solution.nextPermutation(d)
+        print(p[(i + 1) % len(p)], d)
