@@ -1,3 +1,5 @@
+# 逐步删除掉叶子节点（只有一条边与其相连），最终剩下的1个或者2个节点就是结果
+
 class Solution:
     def findMinHeightTrees(self, n, edges):
         graph,nodes = {},set(range(n))
