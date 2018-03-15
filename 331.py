@@ -19,3 +19,10 @@ class Solution:
             else:
                 return False
         return index >= len(preorder)
+
+
+if __name__ == '__main__':
+    solution = Solution()
+    print(solution.isValidSerialization('9,3,4,#,#,1,#,#,2,#,6,#,#'))
+    print(solution.isValidSerialization('1,#'))
+    print(solution.isValidSerialization('9,#,#,1'))

@@ -9,3 +9,10 @@ class Solution:
             else:
                 res.append(1 + res[i - 2 ** (n - 1)])
         return res
+
+
+if __name__ == '__main__':
+    solution = Solution()
+    res = solution.countBits(100)
+    for i in range(101):
+        print(i, sum(map(int, bin(i)[2:])), res[i])

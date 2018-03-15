@@ -20,3 +20,9 @@ class Solution:
                     return res
                 self.graph[cur][to] += 1
         return None
+
+
+if __name__ == '__main__':
+    solution = Solution()
+    print(solution.findItinerary([["MUC", "LHR"], ["JFK", "MUC"], ["SFO", "SJC"], ["LHR", "SFO"]]))
+    print(solution.findItinerary([["JFK", "SFO"], ["JFK", "ATL"], ["SFO", "ATL"], ["ATL", "JFK"], ["ATL", "SFO"]]))

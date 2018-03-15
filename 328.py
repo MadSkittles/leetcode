@@ -1,3 +1,6 @@
+from common import ListNode
+
+
 class Solution:
     def oddEvenList(self, head):
         if not head:
@@ -11,3 +14,13 @@ class Solution:
             odd, even = odd.next, even.next
         odd.next = even_head
         return head
+
+
+if __name__ == '__main__':
+    solution = Solution()
+    print(solution.oddEvenList(ListNode.list2ListNode([])))
+    print(solution.oddEvenList(ListNode.list2ListNode([1])))
+    print(solution.oddEvenList(ListNode.list2ListNode([1, 2])))
+    print(solution.oddEvenList(ListNode.list2ListNode([1, 2, 3])))
+    print(solution.oddEvenList(ListNode.list2ListNode([1, 2, 3, 4])))
+    print(solution.oddEvenList(ListNode.list2ListNode([1, 2, 3, 4, 5])))
