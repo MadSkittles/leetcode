@@ -1,13 +1,13 @@
 class Solution:
     def lastRemaining(self, n):
-        index, n = 1, list(range(1, n + 1))
-        while len(n) > 1:
-            if index & 1:
-                n = n[1::2]
-            else:
-                n = n[len(n)-2::-2][::-1]
-            index += 1
-        return n[0]
+        head, step, remaining, left = 1, 1, n, True
+        while remaining > 1:
+            if left or remaining & 1:
+                head += step
+            remaining //= 2
+            step *= 2
+            left = not left
+        return head
 
 
 if __name__ == '__main__':
