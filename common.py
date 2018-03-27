@@ -82,13 +82,45 @@ class TreeLinkNode(TreeNode):
 
     __repr__ = __str__
 
+
 class UndirectedGraphNode:
     def __init__(self, x):
         self.label = x
         self.neighbors = []
+
 
 class RandomListNode(object):
     def __init__(self, x):
         self.label = x
         self.next = None
         self.random = None
+
+
+class NestedInteger:
+    def __init__(self, value=None):
+        self.val = value or []
+
+    def isInteger(self):
+        return type(self.val) is int
+
+    def add(self, elem):
+        if self.isInteger():
+            self.val = []
+        self.val.append(elem)
+
+    def setInteger(self, value):
+        self.val = value
+
+    def getInteger(self):
+        return self.val if self.isInteger() else None
+
+    def getList(self):
+        return self.val if not self.isInteger() else None
+
+    def __repr__(self):
+        if self.isInteger():
+            return str(self.val)
+        else:
+            return '[' + ', '.join(map(lambda x: repr(x), self.val)) + ']'
+
+    __str__ = __repr__
