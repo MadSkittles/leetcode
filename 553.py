@@ -28,3 +28,8 @@ class Solution:
             pos = exp.pop()
             nums[pos:] = [reduce(lambda x, y: x / y, nums[pos:])]
         return nums[0]
+
+
+if __name__ == '__main__':
+    solution = Solution()
+    print(solution.optimalDivision([100000, 20000, 10000, 5000, 2500, 2000, 1000, 500, 100, 50]))
