@@ -5,13 +5,12 @@ class Solution:
     def widthOfBinaryTree(self, root):
         if not root:
             return 0
-        print(1)
         from queue import Queue
         q, width = Queue(), {1: [1, 1]}
         q.put((root, 1, 1))
         while not q.empty():
             node, depth, index = q.get()
-            start, end = width.get(depth, [float('inf'), float('-inf')])
+            start, end = width.get(depth + 1, [float('inf'), float('-inf')])
             if not node.left and not node.right:
                 continue
             if node.left:
@@ -22,12 +21,16 @@ class Solution:
                 start = min(start, 2 * index + 1)
                 end = max(end, 2 * index + 1)
                 q.put((node.right, depth + 1, 2 * index + 1))
-            width[depth] = [start, end]
+            width[depth + 1] = [start, end]
         return max([end - start + 1 for start, end in width.values()], default=0)
 
 
 if __name__ == '__main__':
     solution = Solution()
+    print(solution.widthOfBinaryTree(TreeNode.list2Tree([1, 3, 2, 5, 3, None, 9])))
+    print(solution.widthOfBinaryTree(TreeNode.list2Tree([1, 3, None, 5, 3])))
+    print(solution.widthOfBinaryTree(TreeNode.list2Tree([1, 3, 2, 5, None])))
+    print(solution.widthOfBinaryTree(TreeNode.list2Tree([1, 3, 2, 5, None, None, 9, 6, None, None, 7])))
     print(solution.widthOfBinaryTree(TreeNode.list2Tree(
         [1, 5, 8, 9, 7, 7, 8, 1, 4, 8, 1, 9, 0, 8, 7, 1, 7, 4, 2, 9, 8, 2, 4, None, None, 9, None, None, None, 6, 0, 9, 4, 1, 0, 1, 8, 9, 0, 1, 8, 9, 1, 0, 9, 6, 2, 5, None, 2, 3, 0, 2, 4, 8, 8, 8, 5,
          0, 0, 9, 4, 9, 1, None, 0, 7, 2, 2, 3, None, 6, 1, 0, 8, 9, 9, 9, 4, 8, 4, 3, 4, 4, 0, None, None, 8, 3, 8, None, None, 0, None, 0, 4, 9, 1, 2, None, 4, 4, 0, 4, 3, 5, 5, 7, 4, 1, 6, None, 1,

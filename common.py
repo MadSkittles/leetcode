@@ -64,6 +64,8 @@ class TreeNode:
                         node.right = nodes[index]
                         next_floor.append(nodes[index])
                         index += 1
+            if not next_floor:
+                break
             for node in next_floor:
                 q.put(node)
 
