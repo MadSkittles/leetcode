@@ -16,8 +16,7 @@ class Solution:
 				break
 			digit = int(str[i])
 			if i == 9:
-				if result > 214748364 or (result == 214748364 and digit >= (7
-																														if base > 0 else 8)):
+				if result > 214748364 or (result == 214748364 and digit >= (7 if base > 0 else 8)):
 					return 2147483647 if base > 0 else -2147483648
 			if i > 9:
 				return 2147483647 if base > 0 else -2147483648

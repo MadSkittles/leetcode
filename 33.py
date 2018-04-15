@@ -22,14 +22,11 @@ class Solution:
                     start = mid + 1
                 elif nums[start] < target:
                     end = mid - 1
-                continue
             else:
                 if nums[mid] > target or nums[start] < target:
                     end = mid - 1
                 elif nums[end] > target:
                     start = mid + 1
-                continue
-
         return -1
 
 
