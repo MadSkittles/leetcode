@@ -1,5 +1,17 @@
 class Solution:
     def isValidSerialization(self, preorder):
+        self.preorder = preorder.split(',')[::-1]
+        return self.f() and not self.preorder
+
+    def f(self):
+        if not self.preorder:
+            return False
+        res = self.preorder.pop()
+        if res == '#':
+            return True
+        return self.f() and self.f()
+
+    def isValidSerialization1(self, preorder):
         preorder = preorder.split(',')
         if not preorder:
             return True
