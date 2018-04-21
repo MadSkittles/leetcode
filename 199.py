@@ -1,5 +1,20 @@
 class Solution:
     def rightSideView(self, root):
+        if not root:
+            return []
+        from queue import Queue
+        q, m = Queue(), {}
+        q.put((root, 0))
+        while not q.empty():
+            node, floor = q.get()
+            m[floor] = node.val
+            if node.left:
+                q.put((node.left, floor + 1))
+            if node.right:
+                q.put((node.right, floor + 1))
+        return [m[i] for i in range(len(m))]
+
+    def rightSideView1(self, root):
         self.result = []
         res = ()
         if root:
