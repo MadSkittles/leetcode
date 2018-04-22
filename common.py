@@ -43,7 +43,7 @@ class TreeNode:
     def list2Tree(cls, l: list):
         nodes = []
         for i in l:
-            nodes.append(cls(i) if i else None)
+            nodes.append(cls(i) or None)
 
         if not nodes:
             return nodes
