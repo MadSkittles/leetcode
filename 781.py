@@ -3,9 +3,7 @@ class Solution:
         from collections import Counter
         res, c = 0, Counter(answers)
         for k in c:
-            while c[k] > 0:
-                res += k + 1
-                c[k] -= k + 1
+            res += (c[k] // (k + 1) + (c[k] % (k + 1) != 0)) * (k + 1)
         return res
 
 
