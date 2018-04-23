@@ -1,6 +1,6 @@
 class Solution:
     def soupServings(self, N):
-        return self.f(N, N, 1) if N <= 4800 else 1
+        return self.f(N, N, 1) if N <= 5550 else 1
 
     from functools import lru_cache
     @lru_cache(maxsize=None)
@@ -14,4 +14,4 @@ class Solution:
 
 if __name__ == '__main__':
     solution = Solution()
-    print(solution.soupServings(660295675))
+    print(solution.soupServings(5551))
