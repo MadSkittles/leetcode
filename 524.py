@@ -10,16 +10,10 @@ class Solution:
         return res
 
     def isSubsequence(self, s):
-        cur = -1
+        import bisect
+        index = -1
         for c in s:
-            if c not in self.m:
+            if index > self.m.get(c, [float('-inf')])[-1]:
                 return False
-            else:
-                index = self.m[c]
-                for i in index:
-                    if i > cur:
-                        cur = i
-                        break
-                else:
-                    return False
+            index = self.m[c][bisect.bisect_left(self.m[c], index)] + 1
         return True

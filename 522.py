@@ -21,17 +21,10 @@ class Solution:
         return res
 
     def isSubsequence(self, s, j):
-        m = self.index_map[j]
-        cur = -1
+        import bisect
+        m, index = self.index_map[j], -1
         for c in s:
-            if c not in m:
+            if index > m.get(c, [float('-inf')])[-1]:
                 return False
-            else:
-                index = m[c]
-                for i in index:
-                    if i > cur:
-                        cur = i
-                        break
-                else:
-                    return False
+            index = m[c][bisect.bisect_left(m[c], index)] + 1
         return True
