@@ -3,9 +3,8 @@ class Solution:
         from collections import Counter
         from itertools import accumulate
         c = Counter()
-        for bricks in wall:
-            c.update(accumulate(bricks, lambda x, y: x + y))
-        c.pop(sum(wall[0]))
+        for w in wall:
+            c.update(accumulate(w[:-1]))
         return len(wall) - max(c.values(), default=0)
 
 

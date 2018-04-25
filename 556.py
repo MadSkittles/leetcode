@@ -1,19 +1,21 @@
 class Solution:
     def nextGreaterElement(self, n):
         from functools import reduce
-        l = []
-        while n:
-            l.append(n % 10)
-            n //= 10
-        l, i = l[::-1], len(l) - 2
-        while i >= 0 and l[i + 1] <= l[i]:
-            i -= 1
-        if i < 0:
+        n = list(str(n))
+        for i in range(len(n) - 2, -1, -1):
+            if n[i] < n[i + 1]:
+                j = len(n) - 1
+                while n[j] <= n[i]:
+                    j -= 1
+                n[i], n[j] = n[j], n[i]
+                n[i + 1:] = n[i + 1:][::-1]
+                break
+        else:
             return -1
-        j = len(l) - 1
-        while l[j] <= l[i]:
-            j -= 1
-        l[i], l[j] = l[j], l[i]
-        l[i + 1:] = reversed(l[i + 1:])
-        res = reduce(lambda x, y: x * 10 + y, l)
-        return res if res <= (2 ** 31 - 1) else -1
+        res = reduce(lambda x, y: int(x) * 10 + int(y), n)
+        return res if res < (2 ** 31 - 1) else -1
+
+
+if __name__ == '__main__':
+    solution = Solution()
+    print(solution.nextGreaterElement(12))
