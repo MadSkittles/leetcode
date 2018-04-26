@@ -1,5 +1,23 @@
 class Solution:
     def maximumSwap(self, num):
+        index, n, m, max_num, max_pos = 0, [], [], float('-inf'), -1
+        while num:
+            v = num % 10
+            n.append(v)
+            if v > max_num:
+                max_num = v
+                max_pos = index
+            m.append(max_pos if max_num > v else index)
+            num //= 10
+            index+=1
+        for i in range(len(m) - 1, -1, -1):
+            if i != m[i]:
+                n[i], n[m[i]] = n[m[i]], n[i]
+                break
+        from functools import reduce
+        return reduce(lambda x, y: x * 10 + y, n[::-1])
+
+    def maximumSwap1(self, num):
         max_num, num_list = [], []
         while num:
             n = num % 10

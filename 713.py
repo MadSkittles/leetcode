@@ -1,7 +1,15 @@
-# 不要每次都去刷新product和hi，否则会TLE
-
 class Solution:
     def numSubarrayProductLessThanK(self, nums, k):
+        lo, product, res = 0, 1, 0
+        for hi in range(len(nums)):
+            product *= nums[hi]
+            while lo <= hi and product >= k:
+                product //= nums[lo]
+                lo += 1
+            res += hi + 1 - lo
+        return res
+
+    def numSubarrayProductLessThanK1(self, nums, k):
         res = 0
         product, hi = 1, 0
         for i, num in enumerate(nums):
