@@ -130,7 +130,7 @@
             3. No.673
         * 最长公共子序列(子串)
             1. No.583 转换为最长公共子序列来做。
-            2. No.718 最长公共子串 DP[i][j]代表s1[:i+1],s2[:j+1]以s[i]和s[j]结尾的公共子串长度，DP[i][j]=D[i-1][j-1]+1 if s[i]==s[j] else 0
+            2. No.718 最长公共子串 DP[i][j]代表s1[:i],s2[:j]以s[i-1]和s[j-1]结尾的公共子串长度，DP[i][j]=D[i-1][j-1]+1 if s[i-1]==s[j-1] else 0
         * 最近公共祖先
             1. No.236
         * 0-1背包
@@ -143,7 +143,7 @@
         * 树形DP
             1. No.337
         * 字符串编辑
-            1. No.583 DP[i][j]代表word1[:i+1]和word2[:j+1]的最小删除次数，DP[i][j]=dp[i - 1][j - 1] if word1[i]==word2[j] else min(1 + dp[i - 1][j], 1 + dp[i][j - 1], 2 + dp[i - 1][j - 1])
+            1. No.583 DP[i][j]代表word1[:i]和word2[:j]的最小删除次数，DP[i][j]=DP[i - 1][j - 1] if word1[i-1]==word2[j-1] else min(1 + DP[i - 1][j], 1 + DP[i][j - 1], 2 + DP[i - 1][j - 1])
             2. No.712 类似于No.583
         * 回文子序列(子串)
 	        1. No.5
@@ -156,7 +156,7 @@
             2. No.714 类似于No.309
         * 线性DP
             1. No.343 DP[i]代表n=i时的结果
-            2. No.368 DP[i]代表以nums[i]结尾的序列，DP[i]=max([(*dp[j], n) for j in range(i - 1, -1, -1) if n % nums[j] == 0], key=lambda x: len(x), default=(n,)))
+            2. No.368 DP[i]代表以nums[i]结尾的序列，DP[i]=max([(*DP[j], n) for j in range(i - 1, -1, -1) if n % nums[j] == 0], key=lambda x: len(x), default=(n,)))
             3. No.376 要做两次DP，波动方向有两种
             4. No.377
             5. No.397 用递归自顶向下比较快
