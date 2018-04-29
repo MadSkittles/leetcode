@@ -14,5 +14,5 @@ class Solution:
 if __name__ == '__main__':
     solution = Solution()
     print(solution.numFriendRequests([73, 106, 39, 6, 26, 15, 30, 100, 71, 35, 46, 112, 6, 60, 110]))
-    # print(solution.numFriendRequests([16, 17, 18]))
-    # print(solution.numFriendRequests([20, 30, 100, 110, 120]))
+    print(solution.numFriendRequests([16, 17, 18]))
+    print(solution.numFriendRequests([20, 30, 100, 110, 120]))
