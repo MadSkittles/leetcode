@@ -12,7 +12,28 @@ class Solution:
                     s.add(words[i][j:])
         return res
 
+    def minimumLengthEncoding2(self, words):
+        words.sort(key=len, reverse=True)
+        res, self.trie = 0, {}
+        for word in words:
+            if not self.is_in_trie(word[::-1]):
+                res += len(word) + 1
+        return res
+
+    def is_in_trie(self, word):
+        p = self.trie
+        for i, c in enumerate(word):
+            if c not in p:
+                break
+            p = p[c]
+        else:
+            return True
+        for c in word[i:]:
+            p[c] = {}
+            p = p[c]
+        return False
+
 
 if __name__ == '__main__':
     solution = Solution()
-    print(solution.minimumLengthEncoding1(["time", "me", "bell"]))
+    print(solution.minimumLengthEncoding2(["time", "me", "bell"]))

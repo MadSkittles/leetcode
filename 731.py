@@ -50,3 +50,26 @@ class MyCalendarTwo:
                 self.start.insert(insert_pos, start)
                 self.end.insert(insert_pos, end)
                 return True
+
+
+class MyCalendarTwo1:
+
+    def __init__(self):
+        from collections import Counter
+        self.counter = Counter()
+
+    def book(self, start, end):
+        self.counter[start] += 1
+        self.counter[end] -= 1
+        cnt = 0
+        for k in sorted(self.counter.keys()):
+            cnt += self.counter[k]
+            if cnt > 2:
+                self.counter[start] -= 1
+                if not self.counter[start]:
+                    self.counter.pop(start)
+                self.counter[end] += 1
+                if not self.counter[end]:
+                    self.counter.pop(end)
+                return False
+        return True
