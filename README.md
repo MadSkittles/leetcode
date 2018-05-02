@@ -55,7 +55,7 @@
             8. [No.593](https://leetcode.com/problems/valid-square) 排序之后各点关系就确定了
             9. [No.763](https://leetcode.com/problems/partition-labels) 记录每个字符第一次出现和最后一次出现的位置，按第一次出现的位置排序，类似于求overlapping interval。
         * 堆排序
-            1. [No.215](https://leetcode.com/problems/kth-largest-element-in-an-array) 堆的大小为215，计算最大值用最小堆
+            1. [No.215](https://leetcode.com/problems/kth-largest-element-in-an-array) 堆的大小为k，计算最大值用最小堆
             2. [No.347](https://leetcode.com/problems/top-k-frequent-elements)
             3. [No.373](https://leetcode.com/problems/find-k-pairs-with-smallest-sums)
             4. [No.692](https://leetcode.com/problems/top-k-frequent-words)
