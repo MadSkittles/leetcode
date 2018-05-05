@@ -42,31 +42,31 @@ Easy:
       status: AC
       title: Excel Sheet Column Number
     - No: 189
-      status: N/A
+      status: AC
       title: Rotate Array
     - No: 191
-      status: N/A
+      status: AC
       title: Number of 1 Bits
     - No: 204
-      status: N/A
+      status: AC
       title: Count Primes
     - No: 206
-      status: N/A
+      status: AC
       title: Reverse Linked List
     - No: 232
-      status: N/A
+      status: AC
       title: Implement Queue using Stacks
     - No: 235
-      status: N/A
+      status: AC
       title: Lowest Common Ancestor of a Binary Search Tree
     - No: 237
-      status: N/A
+      status: AC
       title: Delete Node in a Linked List
     - No: 258
-      status: N/A
+      status: AC
       title: Add Digits
     - No: 270
-      status: N/A
+      status: AC
       title: Closest Binary Search Tree Value
 
 Medium:
