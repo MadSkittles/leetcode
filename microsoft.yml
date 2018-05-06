@@ -9,73 +9,64 @@ Easy:
       status: AC
       title: Valid Parentheses
     - No: 21
-      status: N/A
+      status: AC
       title: Merge Two Sorted Lists
-    - No: 24
-      status: N/A
-      title: Swap Nodes in Pairs
     - No: 26
-      status: N/A
+      status: AC
       title: Remove Duplicates from Sorted Array
     - No: 28
       status: N/A
       title: Implement strStr()
     - No: 88
-      status: N/A
+      status: AC
       title: Merge Sorted Array
     - No: 101
-      status: N/A
+      status: AC
       title: Symmetric Tree
-    - No: 102
-      status: N/A
-      title: Binary Tree Level Order Traversal
     - No: 112
-      status: N/A
+      status: AC
       title: Path Sum
     - No: 121
-      status: N/A
+      status: AC
       title: Best Time to Buy and Sell Stock
     - No: 125
-      status: N/A
+      status: AC
       title: Valid Palindrome
     - No: 160
-      status: N/A
+      status: AC
       title: Intersection of Two Linked Lists
-    - No: 165
-      status: N/A
-      title: Compare Version Numbers
     - No: 168
-      status: N/A
+      status: AC
       title: Excel Sheet Column Title
     - No: 171
-      status: N/A
+      status: AC
       title: Excel Sheet Column Number
     - No: 189
-      status: N/A
+      status: AC
       title: Rotate Array
     - No: 191
-      status: N/A
+      status: AC
       title: Number of 1 Bits
     - No: 204
-      status: N/A
+      status: AC
       title: Count Primes
     - No: 206
-      status: N/A
+      status: AC
       title: Reverse Linked List
     - No: 232
-      status: N/A
+      status: AC
       title: Implement Queue using Stacks
     - No: 235
-      status: N/A
+      status: AC
       title: Lowest Common Ancestor of a Binary Search Tree
     - No: 237
-      status: N/A
+      status: AC
       title: Delete Node in a Linked List
     - No: 258
-      status: N/A
+      status: AC
       title: Add Digits
     - No: 270
-      status: N/A
+      status: AC
       title: Closest Binary Search Tree Value
 
 Medium:
@@ -91,6 +82,9 @@ Medium:
     - No: 15
       status: N/A
       title: 3Sum
+    - No: 24
+      status: N/A
+      title: Swap Nodes in Pairs
     - No: 33
       status: AC
       title: Search in Rotated Sorted Array
@@ -136,6 +130,9 @@ Medium:
     - No: 98
       status: N/A
       title: Validate Binary Search Tree
+    - No: 102
+      status: N/A
+      title: Binary Tree Level Order Traversal
     - No: 103
       status: N/A
       title: Binary Tree Zigzag Level Order Traversal
@@ -166,6 +163,9 @@ Medium:
     - No: 162
       status: N/A
       title: Find Peak Element
+    - No: 165
+      status: N/A
+      title: Compare Version Numbers
     - No: 173
       status: N/A
       title: Binary Search Tree Iterator
@@ -226,7 +226,7 @@ Hard:
       status: AC
       title: Word Search II
     - No: 218
-      status: N/A
+      status: AC...
       title: The Skyline Problem
     - No: 273
       status: AC
