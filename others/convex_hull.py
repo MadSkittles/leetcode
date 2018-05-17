@@ -13,7 +13,7 @@ def graham_scan(points):
         if (points[i][1], points[i][0]) < (points[k][1], points[k][0]):
             k = i
     points[0], points[k] = points[k], points[0]
-    points[1:] = sorted(points[1:], key=cmp_to_key(lambda x, y: -multiply(x, y, points[0]) or (distance(x, points[0] - distance(y, points[0])))))
+    points[1:] = sorted(points[1:], key=cmp_to_key(lambda x, y: -multiply(x, y, points[0]) or (distance(x, points[0]) - distance(y, points[0]))))
     print(points)
     stack = points[:3]
     for p in points[3:]:
