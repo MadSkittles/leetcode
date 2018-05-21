@@ -15,3 +15,8 @@ class Solution:
             else:
                 tails[idx] = n
         return len(tails)
+
+
+if __name__ == '__main__':
+    solution = Solution()
+    print(solution.lengthOfLIS1([10, 9, 2, 5, 3, 7, 101, 18]))
