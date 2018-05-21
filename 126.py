@@ -9,7 +9,6 @@ class Solution(object):
 
         word_len = len(endWord)
 
-        # group words that differ in i-th position
         i_differ_list = []
         for i in range(word_len):
             i_differ_map = {}
@@ -55,7 +54,7 @@ class Solution(object):
                 for parent in parents[tail]:
                     do_dfs(prefix + [parent])
 
-        if do_bfs(set([beginWord])):
+        if do_bfs({beginWord}):
             do_dfs([endWord])
 
         return answers
