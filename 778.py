@@ -2,17 +2,17 @@ class Solution:
     def swimInWater(self, grid):
         N = len(grid)
         from queue import PriorityQueue
-        q, visited = PriorityQueue(), {(0, 0): grid[0][0]}
+        q, visited, res = PriorityQueue(), {(0, 0)}, float('-inf')
         q.put((grid[0][0], 0, 0))
         while not q.empty():
             v, x, y = q.get()
+            res = max(res, v)
             for i, j in [(x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1)]:
-                if 0 <= i < N and 0 <= j < N:
-                    nv = max(v, grid[i][j])
-                    if nv < visited.get((i, j), float('inf')):
-                        q.put((nv, i, j))
-                        visited[(i, j)] = nv
-        return visited[(N - 1, N - 1)]
+                if i == j == N - 1:
+                    return max(res, grid[i][j])
+                if 0 <= i < N and 0 <= j < N and (i, j) not in visited:
+                    q.put((grid[i][j], i, j))
+                    visited.add((i, j))
 
     def swimInWater1(self, grid):
         def find(x):
