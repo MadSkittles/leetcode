@@ -5,11 +5,13 @@ class Solution {
             return nums.max() ?: 0
         }
         val dp = Array(m) { IntArray(N, { Int.MAX_VALUE }) }
-        var s = 0
-        for (i in nums.indices) {
-            s += nums[i]
-            dp[0][i] = s
-        }
+        var index = 0
+        nums.fold(0, { acc: Int, n: Int ->
+            val result = acc + n
+            dp[0][index] = result
+            index += 1
+            result
+        })
         for (i in 1 until m) {
             for (j in i until N) {
                 for (k in i - 1 until j) {
@@ -17,7 +19,7 @@ class Solution {
                 }
             }
         }
-        return dp[m - 1][N - 1]
+        return dp.last().last()
     }
 }
 
