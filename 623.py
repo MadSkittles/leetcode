@@ -8,6 +8,7 @@ class Solution:
             node.left = root
             return node
         from queue import Queue
+
         q = Queue()
         q.put((root, 1))
         while not q.empty():

@@ -3,6 +3,7 @@ class Solution:
         if not root:
             return []
         from queue import Queue
+
         q, m = Queue(), {}
         q.put((root, 0))
         while not q.empty():
@@ -21,7 +22,7 @@ class Solution:
             self.f(root, (root.val,))
             for p in self.result:
                 if len(p) > len(res):
-                    res += p[len(res) - len(p):]
+                    res += p[len(res) - len(p) :]
         return res
 
     def f(self, node, path):

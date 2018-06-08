@@ -1,10 +1,12 @@
 class Solution:
     def topKFrequent(self, nums, k):
         from collections import Counter
+
         return [i[0] for i in Counter(nums).most_common(k)]
 
     def topKFrequent1(self, nums, k):
         from collections import Counter
+
         c = Counter(nums)
         frequency = list(c.items())
         i, j = 0, len(frequency) - 1
@@ -41,6 +43,7 @@ class Solution:
         if not nums:
             return []
         from collections import Counter
+
         c = Counter(nums)
         frequency = list(c.items())
         self.tree = None
@@ -72,9 +75,13 @@ class Solution:
             return self.find_top_k(node.right, k)
         if node.right_size + 1 == k:
             return [node.val[0]] + self.find_top_k(node.right, k - 1)
-        return [node.val[0]] + self.find_top_k(node.right, node.right_size) + self.find_top_k(node.left, k - 1 - node.right_size)
+        return (
+            [node.val[0]]
+            + self.find_top_k(node.right, node.right_size)
+            + self.find_top_k(node.left, k - 1 - node.right_size)
+        )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     solution = Solution()
     print(solution.topKFrequent([1, 1, 1, 2, 2, 3], 2))

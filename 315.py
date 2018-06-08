@@ -32,6 +32,6 @@ class Solution:
                 return node.left_size + 1 + self.build_BST(node.right, n)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     solution = Solution()
     print(solution.countSmaller([-1, -1]))

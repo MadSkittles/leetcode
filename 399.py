@@ -9,7 +9,9 @@ class Solution:
             division_map[(b, a)] = 1 / values[i]
             division_map[(b, b)] = 1.0
             graph.setdefault(b, set()).add(a)
+
         from queue import Queue
+
         elements, start_node = set(graph.keys()), []
         while elements:
             start = elements.pop()
@@ -34,7 +36,12 @@ class Solution:
         return res
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     solution = Solution()
-    print(solution.calcEquation([["a", "b"], ["b", "c"]], [2.0, 3.0],
-                                [["a", "c"], ["b", "a"], ["a", "e"], ["a", "a"], ["x", "x"]]))
+    print(
+        solution.calcEquation(
+            [["a", "b"], ["b", "c"]],
+            [2.0, 3.0],
+            [["a", "c"], ["b", "a"], ["a", "e"], ["a", "a"], ["x", "x"]],
+        )
+    )
