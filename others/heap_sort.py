@@ -1,8 +1,8 @@
-def head_adjust(l, s, length=None):
-    length = len(l) if length is None else length
+def head_adjust(l, s, end=None):
+    end = len(l) if end is None else end
     child = 2 * s + 1
-    while child < length:
-        if child < length - 1 and l[child] < l[child + 1]:
+    while child < end:
+        if child < end - 1 and l[child] < l[child + 1]:
             child += 1
         if l[s] < l[child]:
             l[s], l[child] = l[child], l[s]
