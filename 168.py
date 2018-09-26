@@ -10,6 +10,13 @@ class Solution:
             res = chr(65 + n % 26) + res
             n //= 26
         return res
+    
+    def convertToTitle1(self, n):
+        s = ""
+        while n:
+            s = chr(ord("A") + (n - 1) % 26) + s
+            n = (n - 1) // 26
+        return s
 
 
 if __name__ == '__main__':

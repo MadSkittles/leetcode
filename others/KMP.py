@@ -4,7 +4,7 @@ def get_lps(needle):
         index = lps[i - 1]
         while index > 0 and needle[index] != needle[i]:
             index = lps[index - 1]
-        lps.append(index + (1 if needle[index] == needle[i] else 0))
+        lps.append(index + (needle[index] == needle[i]))
     return lps
 
 

@@ -8,6 +8,9 @@ class Solution:
             res += (ord(c) - 65) * (26 ** i)
         return res + 1
 
+    def titleToNumber1(self, s):
+        return sum((ord(c) - ord("A") + 1) * (26 ** i) for i, c in enumerate(s[::-1]))
+
 if __name__ == '__main__':
     solution=Solution()
     print(solution.titleToNumber('AAA'))
