@@ -1,13 +1,9 @@
 class Solution:
     def rangeBitwiseAnd(self, m, n):
-        i = 0
-        while m != n:
-            m >>= 1
-            n >>= 1
-            i += 1
-        return n << i
+        c = min(i for i in range(33) if m >> i == n >> i)
+        return m >> c << c
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     solution = Solution()
-    print(solution.rangeBitwiseAnd(3, 4))
+    print(solution.rangeBitwiseAnd(5, 7))
