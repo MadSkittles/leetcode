@@ -8,3 +8,8 @@ class Solution:
             else:
                 end = mid - 1
         return start
+
+
+if __name__ == "__main__":
+    solution = Solution()
+    print(solution.findDuplicate([2,1,1,1,4]))
