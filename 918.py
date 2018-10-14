@@ -15,4 +15,3 @@ if __name__ == "__main__":
     print(solution.maxSubarraySumCircular([3, -1, 2, -1]))
     print(solution.maxSubarraySumCircular([3, -2, 2, -3]))
     print(solution.maxSubarraySumCircular([-2, -3, -1]))
-

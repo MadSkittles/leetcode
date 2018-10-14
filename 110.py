@@ -1,6 +1,5 @@
 from common import TreeNode
 
-
 class Solution:
     def isBalanced(self, root):
         return self.helper(root)[0] if root else True
